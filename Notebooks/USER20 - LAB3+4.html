@@ -11788,6 +11788,15 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="USER-20">USER 20<a class="anchor-link" href="#USER-20">&#182;</a></h1><h1 id="Trung-Duy-NGUYEN">Trung-Duy NGUYEN<a class="anchor-link" href="#Trung-Duy-NGUYEN">&#182;</a></h1><h1 id="Minh-Duc-LE">Minh-Duc LE<a class="anchor-link" href="#Minh-Duc-LE">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Building-a-music-recommender-system">Building a music recommender system<a class="anchor-link" href="#Building-a-music-recommender-system">&#182;</a></h1><p>As its name implies, a recommender system is a tool that helps predicting what a user may or may not like among a list of given items. In some sense, you can view this as an alternative to content search, as recommendation engines help users discover products or content that they may not come across otherwise. For example, Facebook suggests friends and pages to users. Youtube recommends videos which users may be interested in. Amazon suggests the products which users may need... Recommendation engines engage users to services, can be seen as a revenue optimization process, and in general help maintaining interest in a service.</p>
 <p>In this notebook, we study how to build a simple recommender system: we focus on music recommendations, and we use a simple algorithm to predict which items users might like, that is called ALS, alternating least squares.</p>
 <h2 id="Goals">Goals<a class="anchor-link" href="#Goals">&#182;</a></h2><p>In this lecture, we expect students to:</p>
@@ -11894,7 +11903,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
@@ -12927,7 +12936,7 @@ P(playCount&lt;=1000) = 0.987435531456235
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Answer-question-2.3:">Answer question 2.3:<a class="anchor-link" href="#Answer-question-2.3:">&#182;</a></h2><h3 id="Total-371638969-play-counts.-In-average,-playCount-per-artist-is-227-times">Total 371638969 play counts. In average, playCount per artist is 227 times<a class="anchor-link" href="#Total-371638969-play-counts.-In-average,-playCount-per-artist-is-227-times">&#182;</a></h3><h3 id="Only-74.87%-of-the-artists-is-played-less-than-or-equal-to-(&lt;=)-10-times.">Only 74.87% of the artists is played less than or equal to (&lt;=) 10 times.<a class="anchor-link" href="#Only-74.87%-of-the-artists-is-played-less-than-or-equal-to-(&lt;=)-10-times.">&#182;</a></h3><h3 id="And-98.74%-of-the-artists-is-played-less-than-or-equal-to-(&lt;=)-1000-times.">And 98.74% of the artists is played less than or equal to (&lt;=) 1000 times.<a class="anchor-link" href="#And-98.74%-of-the-artists-is-played-less-than-or-equal-to-(&lt;=)-1000-times.">&#182;</a></h3><h4 id="In-the-other-hand,-we-have-top-5-artist-play-counts:-[1425942-1542806-1930592-2259185-2502130].-This-accounts-for-2.6%-on-overall-number-of-playCount-(5-out-of-1631028-artists).-This-percentage-implies-that-we-can-globally-predict-most-played-artists-to-every-user,-and-still-get-high-performance.">In the other hand, we have top 5 artist play counts: [1425942 1542806 1930592 2259185 2502130]. This accounts for 2.6% on overall number of playCount (5 out of 1631028 artists). This percentage implies that we can globally predict most-played artists to every user, and still get high performance.<a class="anchor-link" href="#In-the-other-hand,-we-have-top-5-artist-play-counts:-[1425942-1542806-1930592-2259185-2502130].-This-accounts-for-2.6%-on-overall-number-of-playCount-(5-out-of-1631028-artists).-This-percentage-implies-that-we-can-globally-predict-most-played-artists-to-every-user,-and-still-get-high-performance.">&#182;</a></h4>
+<h2 id="Answer-question-2.3:">Answer question 2.3:<a class="anchor-link" href="#Answer-question-2.3:">&#182;</a></h2><h3 id="Total-371638969-play-counts.-In-average,-playCount-per-artist-is-227-times">Total 371638969 play counts. In average, playCount per artist is 227 times<a class="anchor-link" href="#Total-371638969-play-counts.-In-average,-playCount-per-artist-is-227-times">&#182;</a></h3><h3 id="Only-74.87%-of-the-artists-is-played-less-than-or-equal-to-(&lt;=)-10-times.">Only 74.87% of the artists is played less than or equal to (&lt;=) 10 times.<a class="anchor-link" href="#Only-74.87%-of-the-artists-is-played-less-than-or-equal-to-(&lt;=)-10-times.">&#182;</a></h3><h3 id="And-98.74%-of-the-artists-is-played-less-than-or-equal-to-(&lt;=)-1000-times.">And 98.74% of the artists is played less than or equal to (&lt;=) 1000 times.<a class="anchor-link" href="#And-98.74%-of-the-artists-is-played-less-than-or-equal-to-(&lt;=)-1000-times.">&#182;</a></h3><h4 id="In-the-other-hand,-we-have-top-5-artist-play-counts:-[1425942-1542806-1930592-2259185-2502130].-This-accounts-for-2.6%-on-overall-number-of-playCount-(5-out-of-1631028-artists).-Moreover,-the-play-count-of-top-5-artist-is-much-higher-than-the-mean.-So-we-can-implie-that-we-can-recommend-most-played-artists-to-every-user-with-this-top-5-artirst,-and-still-get-high-performance.">In the other hand, we have top 5 artist play counts: [1425942 1542806 1930592 2259185 2502130]. This accounts for 2.6% on overall number of playCount (5 out of 1631028 artists). Moreover, the play count of top 5 artist is much higher than the mean. So we can implie that we can recommend most-played artists to every user with this top 5 artirst, and still get high performance.<a class="anchor-link" href="#In-the-other-hand,-we-have-top-5-artist-play-counts:-[1425942-1542806-1930592-2259185-2502130].-This-accounts-for-2.6%-on-overall-number-of-playCount-(5-out-of-1631028-artists).-Moreover,-the-play-count-of-top-5-artist-is-much-higher-than-the-mean.-So-we-can-implie-that-we-can-recommend-most-played-artists-to-every-user-with-this-top-5-artirst,-and-still-get-high-performance.">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -13141,7 +13150,7 @@ gJmZWZb+P0M7881PighqAAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Answer-question-2.4:">Answer question 2.4:<a class="anchor-link" href="#Answer-question-2.4:">&#182;</a></h2><h3 id="This-resuls-seem-not-reasonable.">This resuls seem not reasonable.<a class="anchor-link" href="#This-resuls-seem-not-reasonable.">&#182;</a></h3><h3 id="In-the-previous,-98.74%-of-the-artists-have-the-play-count-less-than-or-equal-to-(&lt;=)-1000-times.-So,-top-5-artists-is-not-sufficient-to-extract-infomation-about-the-data.-We-should">In the previous, 98.74% of the artists have the play count less than or equal to (&lt;=) 1000 times. So, top-5-artists is not sufficient to extract infomation about the data. We should<a class="anchor-link" href="#In-the-previous,-98.74%-of-the-artists-have-the-play-count-less-than-or-equal-to-(&lt;=)-1000-times.-So,-top-5-artists-is-not-sufficient-to-extract-infomation-about-the-data.-We-should">&#182;</a></h3><h4 id="As-the-result-question-2.3,-top-5-artists-take-about-2.6%-of-the-total-play-counts,-but-98.74%-of-the-artists-have-the-play-count-less-than-or-equal-to-(&lt;=)-1000-times.-Then-this-is-obviously-that-some-artists-are-played-much-more-than-other-artists.">As the result question 2.3, top-5-artists take about 2.6% of the total play counts, but 98.74% of the artists have the play count less than or equal to (&lt;=) 1000 times. Then this is obviously that some artists are played much more than other artists.<a class="anchor-link" href="#As-the-result-question-2.3,-top-5-artists-take-about-2.6%-of-the-total-play-counts,-but-98.74%-of-the-artists-have-the-play-count-less-than-or-equal-to-(&lt;=)-1000-times.-Then-this-is-obviously-that-some-artists-are-played-much-more-than-other-artists.">&#182;</a></h4>
+<h2 id="Answer-question-2.4:">Answer question 2.4:<a class="anchor-link" href="#Answer-question-2.4:">&#182;</a></h2><h3 id="This-resuls-seem-not-reasonable.">This resuls seem not reasonable.<a class="anchor-link" href="#This-resuls-seem-not-reasonable.">&#182;</a></h3><h3 id="In-the-previous,-98.74%-of-the-artists-have-the-play-count-less-than-or-equal-to-(&lt;=)-1000-times.-So,-top-5-artists-is-not-sufficient-to-extract-infomation-about-the-data,-they-are-the-outliers-.-We-should-cut-them-out-of-data.">In the previous, 98.74% of the artists have the play count less than or equal to (&lt;=) 1000 times. So, top-5-artists is not sufficient to extract infomation about the data, they are the <em>outliers</em> . We should cut them out of data.<a class="anchor-link" href="#In-the-previous,-98.74%-of-the-artists-have-the-play-count-less-than-or-equal-to-(&lt;=)-1000-times.-So,-top-5-artists-is-not-sufficient-to-extract-infomation-about-the-data,-they-are-the-outliers-.-We-should-cut-them-out-of-data.">&#182;</a></h3><h4 id="As-the-result-question-2.3,-top-5-artists-take-about-2.6%-of-the-total-play-counts,-but-98.74%-of-the-artists-have-the-play-count-less-than-or-equal-to-(&lt;=)-1000-times.-Then-this-is-obviously-that-some-artists-are-played-much-more-than-other-artists.">As the result question 2.3, top-5-artists take about 2.6% of the total play counts, but 98.74% of the artists have the play count less than or equal to (&lt;=) 1000 times. Then this is obviously that some artists are played much more than other artists.<a class="anchor-link" href="#As-the-result-question-2.3,-top-5-artists-take-about-2.6%-of-the-total-play-counts,-but-98.74%-of-the-artists-have-the-play-count-less-than-or-equal-to-(&lt;=)-1000-times.-Then-this-is-obviously-that-some-artists-are-played-much-more-than-other-artists.">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -14836,7 +14845,7 @@ However, if the data has the invalid entries such that SPARK SQL API is stuck, t
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">rawArtistAlias</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">textFile</span><span class="p">(</span><span class="n">base</span> <span class="o">+</span> <span class="s2">&quot;artist_alias.txt&quot;</span><span class="p">)</span>
@@ -14887,7 +14896,7 @@ However, if the data has the invalid entries such that SPARK SQL API is stuck, t
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">bArtistAlias</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">broadcast</span><span class="p">(</span><span class="n">artistAlias</span><span class="p">)</span>
@@ -14912,7 +14921,7 @@ However, if the data has the invalid entries such that SPARK SQL API is stuck, t
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[9]:</div>
+<div class="prompt output_prompt">Out[4]:</div>
 
 
 
@@ -14952,7 +14961,7 @@ However, if the data has the invalid entries such that SPARK SQL API is stuck, t
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">pyspark.mllib.recommendation</span> <span class="k">import</span> <span class="n">ALS</span><span class="p">,</span> <span class="n">MatrixFactorizationModel</span><span class="p">,</span> <span class="n">Rating</span>
@@ -14965,7 +14974,7 @@ However, if the data has the invalid entries such that SPARK SQL API is stuck, t
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># What is the role of repartition() ? currently set to 1</span>
@@ -14983,7 +14992,7 @@ However, if the data has the invalid entries such that SPARK SQL API is stuck, t
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[11]:</div>
+<div class="prompt output_prompt">Out[6]:</div>
 
 
 
@@ -15025,7 +15034,7 @@ However, if the data has the invalid entries such that SPARK SQL API is stuck, t
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#setting parameters</span>
@@ -15053,7 +15062,7 @@ However, if the data has the invalid entries such that SPARK SQL API is stuck, t
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>finish training model in 23.700969 secs
+<pre>finish training model in 24.903889 secs
 </pre>
 </div>
 </div>
@@ -15078,7 +15087,7 @@ Let's use this function to store our model as name <code>lastfm_model.spark</cod
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span> hdfs dfs -rm -R -f -skipTrash lastfm_model.spark
@@ -15099,8 +15108,7 @@ Let's use this function to store our model as name <code>lastfm_model.spark</cod
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Deleted lastfm_model.spark
-Delete old model
+<pre>Delete old model
 Save new model
 </pre>
 </div>
@@ -15123,7 +15131,7 @@ Save new model
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
@@ -15144,7 +15152,7 @@ Save new model
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>finish loading model in 2.338303 secs
+<pre>finish loading model in 2.425127 secs
 </pre>
 </div>
 </div>
@@ -15165,7 +15173,7 @@ Save new model
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">userFeatures</span><span class="p">()</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
@@ -15180,13 +15188,13 @@ Save new model
 
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[15]:</div>
+<div class="prompt output_prompt">Out[13]:</div>
 
 
 
 <div class="output_text output_subarea output_execute_result">
 <pre>(120,
- array(&#39;d&#39;, [0.013015546835958958, 0.026646407321095467, 0.03155335783958435, 0.010615335777401924, -0.011892418377101421, 0.04263768345117569, -0.006773869041353464, 0.03619746118783951, -0.020702147856354713, 0.001963405404239893]))</pre>
+ array(&#39;d&#39;, [-0.002807441633194685, -0.0200041513890028, 0.014013275504112244, -0.022326312959194183, 0.04312213882803917, -0.0027875148225575686, 0.046158213168382645, 0.011331755667924881, -0.03839368000626564, -0.029957326129078865]))</pre>
 </div>
 
 </div>
@@ -15208,7 +15216,7 @@ Save new model
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[47]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Make five reccommendations to user 2093760</span>
@@ -15231,18 +15239,18 @@ Save new model
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[Rating(user=2093760, product=1007614, rating=0.031728325986117266), Rating(user=2093760, product=4605, rating=0.029786811867368757), Rating(user=2093760, product=2814, rating=0.02909620790980484), Rating(user=2093760, product=829, rating=0.028143097273975112), Rating(user=2093760, product=250, rating=0.027969621114353672)]
+<pre>[Rating(user=2093760, product=1034635, rating=0.17269097546932172), Rating(user=2093760, product=4267, rating=0.17184904002349438), Rating(user=2093760, product=1001412, rating=0.17153108341800977), Rating(user=2093760, product=1270639, rating=0.17086432699294524), Rating(user=2093760, product=1205, rating=0.17035716372600201)]
 </pre>
 </div>
 </div>
 
 <div class="output_area">
-<div class="prompt output_prompt">Out[17]:</div>
+<div class="prompt output_prompt">Out[47]:</div>
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{250, 829, 2814, 4605, 1007614}</pre>
+<pre>{1205, 4267, 1001412, 1034635, 1270639}</pre>
 </div>
 
 </div>
@@ -15253,7 +15261,7 @@ Save new model
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[48]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># construct data of artists (artist_id, artist_name)</span>
@@ -15280,7 +15288,7 @@ Save new model
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[49]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Filter in those artists, get just artist, and print</span>
@@ -15308,7 +15316,7 @@ Save new model
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[&#39;50 Cent&#39;, &#39;Snoop Dogg&#39;, &#39;Nas&#39;, &#39;Jay-Z&#39;, &#39;Outkast&#39;]
+<pre>[&#39;[unknown]&#39;, &#39;The Killers&#39;, &#39;U2&#39;, &#39;Green Day&#39;, &#39;blink-182&#39;]
 </pre>
 </div>
 </div>
@@ -15329,7 +15337,7 @@ Save new model
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">unpersist</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
@@ -15376,19 +15384,6 @@ One of serveral methods approach to evaluate  a recommender based on its ability
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<div class="highlight"><pre><span></span><span class="n">trainData</span><span class="p">,</span> <span class="n">cvData</span> <span class="o">=</span> <span class="n">allData</span><span class="o">.</span><span class="n">randomSplit</span> <span class="o">...</span>
-<span class="n">trainData</span><span class="o">.</span><span class="n">cache</span><span class="p">()</span>
-<span class="n">cvData</span><span class="o">.</span><span class="n">cache</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[21]:</div>
@@ -15413,7 +15408,7 @@ One of serveral methods approach to evaluate  a recommender based on its ability
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>PythonRDD[194] at RDD at PythonRDD.scala:48</pre>
+<pre>PythonRDD[192] at RDD at PythonRDD.scala:48</pre>
 </div>
 
 </div>
@@ -15427,7 +15422,7 @@ One of serveral methods approach to evaluate  a recommender based on its ability
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Answer-question-9.1:">Answer question 9.1:<a class="anchor-link" href="#Answer-question-9.1:">&#182;</a></h2><h3 id="Here-I-just-split-the-dataset-to-70%-for-training-and-30%-for-testing.-If-I-have-enough-time,-I-will-conduct-an-experiment-that-changing-the-proportion-of-splitting-data-to-see-how-it-affects-our-prediction-model.">Here I just split the dataset to 70% for training and 30% for testing. If I have enough time, I will conduct an experiment that changing the proportion of splitting data to see how it affects our prediction model.<a class="anchor-link" href="#Here-I-just-split-the-dataset-to-70%-for-training-and-30%-for-testing.-If-I-have-enough-time,-I-will-conduct-an-experiment-that-changing-the-proportion-of-splitting-data-to-see-how-it-affects-our-prediction-model.">&#182;</a></h3>
+<h2 id="Answer-question-9.1:">Answer question 9.1:<a class="anchor-link" href="#Answer-question-9.1:">&#182;</a></h2><h3 id="Here-I-just-split-the-dataset-to-70%-for-training-and-30%-for-testing.-If-I-have-enough-time,-I-will-conduct-an-experiment-that-changing-the-proportion-of-splitting-data-to-see-how-it-affects-our-prediction-model.--(See-it-at-Addition-work)">Here I just split the dataset to 70% for training and 30% for testing. If I have enough time, I will conduct an experiment that changing the proportion of splitting data to see how it affects our prediction model.  (See it at Addition work)<a class="anchor-link" href="#Here-I-just-split-the-dataset-to-70%-for-training-and-30%-for-testing.-If-I-have-enough-time,-I-will-conduct-an-experiment-that-changing-the-proportion-of-splitting-data-to-see-how-it-affects-our-prediction-model.--(See-it-at-Addition-work)">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -15475,7 +15470,7 @@ One of serveral methods approach to evaluate  a recommender based on its ability
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Get all unique artistId, and broadcast them</span>
@@ -15490,7 +15485,7 @@ One of serveral methods approach to evaluate  a recommender based on its ability
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="k">import</span> <span class="n">randint</span>
@@ -15651,7 +15646,7 @@ finish in 48.165726 seconds
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">bListenCount</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">broadcast</span><span class="p">(</span><span class="n">trainData</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">r</span><span class="p">:</span> <span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">r</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span><span class="o">.</span><span class="n">reduceByKey</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">:</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">collectAsMap</span><span class="p">())</span>
@@ -15666,7 +15661,7 @@ finish in 48.165726 seconds
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">auc</span> <span class="o">=</span> <span class="n">calculateAUC</span><span class="p">(</span><span class="n">cvData</span><span class="p">,</span><span class="n">bListenCount</span><span class="p">,</span> <span class="n">predictMostListened</span><span class="p">)</span>
@@ -15685,7 +15680,7 @@ finish in 48.165726 seconds
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>AUC score:0.9360186325213407
+<pre>AUC score:0.9362263725195067
 </pre>
 </div>
 </div>
@@ -15825,7 +15820,7 @@ Train model with rank=50 lambda_=0.000100 alpha=40.000000
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[46]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">ALS</span><span class="o">.</span><span class="n">trainImplicit</span><span class="p">(</span><span class="n">ratings</span><span class="o">=</span><span class="n">allData</span><span class="p">,</span> <span class="n">rank</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">lambda_</span><span class="o">=</span><span class="mf">0.0001</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">40.0</span><span class="p">)</span>
@@ -15834,7 +15829,15 @@ Train model with rank=50 lambda_=0.000100 alpha=40.000000
 <span class="n">userID</span> <span class="o">=</span> <span class="mi">2093760</span>
 <span class="n">recommendations</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">recommendProducts</span><span class="p">(</span><span class="n">userID</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
 
-<span class="n">recommendedProductIDs</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">rating</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">rating</span> <span class="ow">in</span> <span class="n">recommendations</span><span class="p">)</span>
+<span class="n">recArtist</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">rating</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">rating</span> <span class="ow">in</span> <span class="n">recommendations</span><span class="p">)</span>
+
+<span class="c1"># Filter in those artists, get just artist, and print</span>
+<span class="k">def</span> <span class="nf">artistNames</span><span class="p">(</span><span class="n">line</span><span class="p">):</span>
+<span class="c1">#     [artistID, name]</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">in</span> <span class="n">recArtist</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
 
 <span class="n">recList</span> <span class="o">=</span> <span class="n">artistByID</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">artistNames</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">()</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">recList</span><span class="p">)</span>
@@ -15854,7 +15857,7 @@ Train model with rank=50 lambda_=0.000100 alpha=40.000000
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[&#39;50 Cent&#39;, &#39;Snoop Dogg&#39;, &#39;Nas&#39;, &#39;Jay-Z&#39;, &#39;Outkast&#39;]
+<pre>[&#39;[unknown]&#39;, &#39;The Killers&#39;, &#39;U2&#39;, &#39;Green Day&#39;, &#39;blink-182&#39;]
 </pre>
 </div>
 </div>
@@ -15868,7 +15871,486 @@ Train model with rank=50 lambda_=0.000100 alpha=40.000000
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Answer-question-10.2:">Answer question 10.2:<a class="anchor-link" href="#Answer-question-10.2:">&#182;</a></h2><h3 id="It-seems-that-the-result-of-top-5-recommended-artists-does-not-change-when-we-input-more-parameters-the-model-(such-as-lambda,-alpha).--I-think-that-we-should-extend-to-top-50-or-top-70-to-see-how-the-recommendation-changing.-Because-I-guess-lambda-and-alpha-just-work-when-the-ratings-of-each-artist-have-average-value-on-all-total-of-ratings-artists-for-one-user-(Top-5-artists-have-the-larger-rating-value-than-others)">It seems that the result of top 5 recommended artists does not change when we input more parameters the model (such as lambda, alpha).  I think that we should extend to top 50 or top 70 to see how the recommendation changing. Because I guess lambda and alpha just work when the ratings of each artist have average value on all total of ratings artists for one user (Top 5 artists have the larger rating value than others)<a class="anchor-link" href="#It-seems-that-the-result-of-top-5-recommended-artists-does-not-change-when-we-input-more-parameters-the-model-(such-as-lambda,-alpha).--I-think-that-we-should-extend-to-top-50-or-top-70-to-see-how-the-recommendation-changing.-Because-I-guess-lambda-and-alpha-just-work-when-the-ratings-of-each-artist-have-average-value-on-all-total-of-ratings-artists-for-one-user-(Top-5-artists-have-the-larger-rating-value-than-others)">&#182;</a></h3><h3 id="This-raises-me-the-question-that-how-strong-the-impact-of-those-parameters?-Is-it-really-nessessary-to-put-into-our-model-when-we-just-need-to-retrieve-a-small-number-of-top-artists-(let's-say,-less-than-top-10)?">This raises me the question that how strong the impact of those parameters? Is it really nessessary to put into our model when we just need to retrieve a small number of top artists (let's say, less than top 10)?<a class="anchor-link" href="#This-raises-me-the-question-that-how-strong-the-impact-of-those-parameters?-Is-it-really-nessessary-to-put-into-our-model-when-we-just-need-to-retrieve-a-small-number-of-top-artists-(let's-say,-less-than-top-10)?">&#182;</a></h3>
+<h2 id="Answer-question-10.2:">Answer question 10.2:<a class="anchor-link" href="#Answer-question-10.2:">&#182;</a></h2><h3 id="It-seems-that-the-result-of-top-5-recommended-artists-does-not-change-when-we-add-more-parameters-to-the-model-or-modify-them-(such-as-lambda,-alpha).--I-think-that-we-should-extend-to-top-50-or-top-70-to-see-how-the-recommendation-changing.-Because-I-think-that-lambda-and-alpha-parameters-affect-only-when-the-rating-of-each-artist-approximate-the-mean-of-total-ratings-for-one-user-(Top-5-artists-have-the-much-larger-rating-value-than-others,-top-5-artists-do-not-change-with-modified-parameter)">It seems that the result of top 5 recommended artists does not change when we add more parameters to the model or modify them (such as lambda, alpha).  I think that we should extend to top 50 or top 70 to see how the recommendation changing. Because I think that lambda and alpha parameters affect only when the rating of each artist approximate the mean of total ratings for one user (Top 5 artists have the much larger rating value than others, top 5 artists do not change with modified parameter)<a class="anchor-link" href="#It-seems-that-the-result-of-top-5-recommended-artists-does-not-change-when-we-add-more-parameters-to-the-model-or-modify-them-(such-as-lambda,-alpha).--I-think-that-we-should-extend-to-top-50-or-top-70-to-see-how-the-recommendation-changing.-Because-I-think-that-lambda-and-alpha-parameters-affect-only-when-the-rating-of-each-artist-approximate-the-mean-of-total-ratings-for-one-user-(Top-5-artists-have-the-much-larger-rating-value-than-others,-top-5-artists-do-not-change-with-modified-parameter)">&#182;</a></h3><h3 id="This-raises-me-the-question-that-how-strong-the-impact-of-those-parameters?-Is-it-really-nessessary-to-put-into-our-model-when-we-just-need-to-retrieve-a-small-number-of-top-artists-(let's-say,-less-than-top-10)?">This raises me the question that how strong the impact of those parameters? Is it really nessessary to put into our model when we just need to retrieve a small number of top artists (let's say, less than top 10)?<a class="anchor-link" href="#This-raises-me-the-question-that-how-strong-the-impact-of-those-parameters?-Is-it-really-nessessary-to-put-into-our-model-when-we-just-need-to-retrieve-a-small-number-of-top-artists-(let's-say,-less-than-top-10)?">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Additional-work">Additional work<a class="anchor-link" href="#Additional-work">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="1/-Changing-the-proportion-of-splitting-data">1/ Changing the proportion of splitting data<a class="anchor-link" href="#1/-Changing-the-proportion-of-splitting-data">&#182;</a></h2><h3 id="In-this-experiment,-I-will-change-the-percentage-of-training-data-to-50%,-80%,-90%-and-99%-respectively.-The-purpose-is-to-observe-the-changing-of-AUC-score">In this experiment, I will change the percentage of training data to 50%, 80%, 90% and 99% respectively. The purpose is to observe the changing of AUC score<a class="anchor-link" href="#In-this-experiment,-I-will-change-the-percentage-of-training-data-to-50%,-80%,-90%-and-99%-respectively.-The-purpose-is-to-observe-the-changing-of-AUC-score">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">trainData</span><span class="p">,</span> <span class="n">cvData</span> <span class="o">=</span> <span class="n">allData</span><span class="o">.</span><span class="n">randomSplit</span><span class="p">([</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">],</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">trainData</span><span class="o">.</span><span class="n">cache</span><span class="p">()</span>
+<span class="n">cvData</span><span class="o">.</span><span class="n">cache</span><span class="p">()</span>
+
+<span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">ALS</span><span class="o">.</span><span class="n">trainImplicit</span><span class="p">(</span><span class="n">ratings</span><span class="o">=</span><span class="n">trainData</span><span class="p">,</span><span class="n">rank</span><span class="o">=</span><span class="n">rank</span><span class="p">,</span><span class="n">iterations</span><span class="o">=</span><span class="n">iterations</span><span class="p">,</span><span class="n">lambda_</span><span class="o">=</span><span class="n">lambda_</span> <span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="n">alpha</span><span class="p">)</span>
+<span class="n">t1</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;finish training model in </span><span class="si">%f</span><span class="s2"> secs&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">t1</span> <span class="o">-</span> <span class="n">t0</span><span class="p">))</span>
+
+<span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+<span class="n">auc</span> <span class="o">=</span> <span class="n">calculateAUC</span><span class="p">(</span> <span class="n">cvData</span><span class="p">,</span><span class="n">bAllItemIDs</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">predictAll</span><span class="p">)</span>
+<span class="n">t1</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;auc=&quot;</span><span class="p">,</span><span class="n">auc</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;finish in </span><span class="si">%f</span><span class="s2"> seconds&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">t1</span> <span class="o">-</span> <span class="n">t0</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>finish training model in 25.263721 secs
+auc= 0.9557431751634355
+finish in 85.266183 seconds
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">trainData</span><span class="p">,</span> <span class="n">cvData</span> <span class="o">=</span> <span class="n">allData</span><span class="o">.</span><span class="n">randomSplit</span><span class="p">([</span><span class="mf">0.8</span><span class="p">,</span><span class="mf">0.2</span><span class="p">],</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">trainData</span><span class="o">.</span><span class="n">cache</span><span class="p">()</span>
+<span class="n">cvData</span><span class="o">.</span><span class="n">cache</span><span class="p">()</span>
+
+<span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">ALS</span><span class="o">.</span><span class="n">trainImplicit</span><span class="p">(</span><span class="n">ratings</span><span class="o">=</span><span class="n">trainData</span><span class="p">,</span><span class="n">rank</span><span class="o">=</span><span class="n">rank</span><span class="p">,</span><span class="n">iterations</span><span class="o">=</span><span class="n">iterations</span><span class="p">,</span><span class="n">lambda_</span><span class="o">=</span><span class="n">lambda_</span> <span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="n">alpha</span><span class="p">)</span>
+<span class="n">t1</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;finish training model in </span><span class="si">%f</span><span class="s2"> secs&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">t1</span> <span class="o">-</span> <span class="n">t0</span><span class="p">))</span>
+
+<span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+<span class="n">auc</span> <span class="o">=</span> <span class="n">calculateAUC</span><span class="p">(</span> <span class="n">cvData</span><span class="p">,</span><span class="n">bAllItemIDs</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">predictAll</span><span class="p">)</span>
+<span class="n">t1</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;auc=&quot;</span><span class="p">,</span><span class="n">auc</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;finish in </span><span class="si">%f</span><span class="s2"> seconds&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">t1</span> <span class="o">-</span> <span class="n">t0</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>finish training model in 37.375712 secs
+auc= 0.9633452139683835
+finish in 41.787996 seconds
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">trainData</span><span class="p">,</span> <span class="n">cvData</span> <span class="o">=</span> <span class="n">allData</span><span class="o">.</span><span class="n">randomSplit</span><span class="p">([</span><span class="mf">0.9</span><span class="p">,</span><span class="mf">0.1</span><span class="p">],</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">trainData</span><span class="o">.</span><span class="n">cache</span><span class="p">()</span>
+<span class="n">cvData</span><span class="o">.</span><span class="n">cache</span><span class="p">()</span>
+
+<span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">ALS</span><span class="o">.</span><span class="n">trainImplicit</span><span class="p">(</span><span class="n">ratings</span><span class="o">=</span><span class="n">trainData</span><span class="p">,</span><span class="n">rank</span><span class="o">=</span><span class="n">rank</span><span class="p">,</span><span class="n">iterations</span><span class="o">=</span><span class="n">iterations</span><span class="p">,</span><span class="n">lambda_</span><span class="o">=</span><span class="n">lambda_</span> <span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="n">alpha</span><span class="p">)</span>
+<span class="n">t1</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;finish training model in </span><span class="si">%f</span><span class="s2"> secs&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">t1</span> <span class="o">-</span> <span class="n">t0</span><span class="p">))</span>
+
+<span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+<span class="n">auc</span> <span class="o">=</span> <span class="n">calculateAUC</span><span class="p">(</span> <span class="n">cvData</span><span class="p">,</span><span class="n">bAllItemIDs</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">predictAll</span><span class="p">)</span>
+<span class="n">t1</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;auc=&quot;</span><span class="p">,</span><span class="n">auc</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;finish in </span><span class="si">%f</span><span class="s2"> seconds&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">t1</span> <span class="o">-</span> <span class="n">t0</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>finish training model in 33.685315 secs
+auc= 0.9641551756487843
+finish in 34.078077 seconds
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">trainData</span><span class="p">,</span> <span class="n">cvData</span> <span class="o">=</span> <span class="n">allData</span><span class="o">.</span><span class="n">randomSplit</span><span class="p">([</span><span class="mf">0.99</span><span class="p">,</span><span class="mf">0.01</span><span class="p">],</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">trainData</span><span class="o">.</span><span class="n">cache</span><span class="p">()</span>
+<span class="n">cvData</span><span class="o">.</span><span class="n">cache</span><span class="p">()</span>
+
+<span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">ALS</span><span class="o">.</span><span class="n">trainImplicit</span><span class="p">(</span><span class="n">ratings</span><span class="o">=</span><span class="n">trainData</span><span class="p">,</span><span class="n">rank</span><span class="o">=</span><span class="n">rank</span><span class="p">,</span><span class="n">iterations</span><span class="o">=</span><span class="n">iterations</span><span class="p">,</span><span class="n">lambda_</span><span class="o">=</span><span class="n">lambda_</span> <span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="n">alpha</span><span class="p">)</span>
+<span class="n">t1</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;finish training model in </span><span class="si">%f</span><span class="s2"> secs&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">t1</span> <span class="o">-</span> <span class="n">t0</span><span class="p">))</span>
+
+<span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+<span class="n">auc</span> <span class="o">=</span> <span class="n">calculateAUC</span><span class="p">(</span> <span class="n">cvData</span><span class="p">,</span><span class="n">bAllItemIDs</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">predictAll</span><span class="p">)</span>
+<span class="n">t1</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;auc=&quot;</span><span class="p">,</span><span class="n">auc</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;finish in </span><span class="si">%f</span><span class="s2"> seconds&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">t1</span> <span class="o">-</span> <span class="n">t0</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>finish training model in 45.203944 secs
+auc= 0.9672845649647493
+finish in 9.635875 seconds
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="As-the-above-results,-we-have:">As the above results, we have:<a class="anchor-link" href="#As-the-above-results,-we-have:">&#182;</a></h3><h4 id="training-50%--&gt;-AUC:-0.9557431751634355">training 50% -&gt; AUC: 0.9557431751634355<a class="anchor-link" href="#training-50%--&gt;-AUC:-0.9557431751634355">&#182;</a></h4><h4 id="training-80%--&gt;-AUC:-0.9633452139683835">training 80% -&gt; AUC: 0.9633452139683835<a class="anchor-link" href="#training-80%--&gt;-AUC:-0.9633452139683835">&#182;</a></h4><h4 id="training-90%--&gt;-AUC:-0.9641551756487843">training 90% -&gt; AUC: 0.9641551756487843<a class="anchor-link" href="#training-90%--&gt;-AUC:-0.9641551756487843">&#182;</a></h4><h4 id="training-99%--&gt;-AUC:-0.9672845649647493">training 99% -&gt; AUC: 0.9672845649647493<a class="anchor-link" href="#training-99%--&gt;-AUC:-0.9672845649647493">&#182;</a></h4><h4 id="This-is-obviouly-that-the-proportion-of-splitting-data-does-affect-the-result-of-the-AUC-score.-The-more-training-data,-the-higher-AUC-score.-In-my-opinion,-having-higher-AUC-score-does-not-mean-that-the-model-is-working-well-in-general.-Because-high-percentage-of-training-data-may-prone-to-overfitting.">This is obviouly that the proportion of splitting data does affect the result of the AUC score. The more training data, the higher AUC score. In my opinion, having higher AUC score does not mean that the model is working well in general. Because high percentage of training data may prone to overfitting.<a class="anchor-link" href="#This-is-obviouly-that-the-proportion-of-splitting-data-does-affect-the-result-of-the-AUC-score.-The-more-training-data,-the-higher-AUC-score.-In-my-opinion,-having-higher-AUC-score-does-not-mean-that-the-model-is-working-well-in-general.-Because-high-percentage-of-training-data-may-prone-to-overfitting.">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="2/-Expand-the-the-list-of-recommended-artist">2/ Expand the the list of recommended artist<a class="anchor-link" href="#2/-Expand-the-the-list-of-recommended-artist">&#182;</a></h2><h3 id="As-my-hypothesis-in-question-10.2,-in-this-experiment,-instead-of-retrieving-top-5-artist,-I-try-to-retrieve-top-50-and-70-artist-with-modified-parameters-to-see-the-differences-the-result-compare-to-the-model-with-standard-parameters">As my hypothesis in question 10.2, in this experiment, instead of retrieving top 5 artist, I try to retrieve top 50 and 70 artist with modified parameters to see the differences the result compare to the model with standard parameters<a class="anchor-link" href="#As-my-hypothesis-in-question-10.2,-in-this-experiment,-instead-of-retrieving-top-5-artist,-I-try-to-retrieve-top-50-and-70-artist-with-modified-parameters-to-see-the-differences-the-result-compare-to-the-model-with-standard-parameters">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Model-with-standard-parameters-(lambda-and-alpha-are-set-by-default)">Model with standard parameters (lambda and alpha are set by default)<a class="anchor-link" href="#Model-with-standard-parameters-(lambda-and-alpha-are-set-by-default)">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">trainData</span><span class="p">,</span> <span class="n">cvData</span> <span class="o">=</span> <span class="n">allData</span><span class="o">.</span><span class="n">randomSplit</span><span class="p">([</span><span class="mf">0.7</span><span class="p">,</span><span class="mf">0.3</span><span class="p">],</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">trainData</span><span class="o">.</span><span class="n">cache</span><span class="p">()</span>
+<span class="n">cvData</span><span class="o">.</span><span class="n">cache</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[28]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>PythonRDD[909] at RDD at PythonRDD.scala:48</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[50]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">model50</span> <span class="o">=</span> <span class="n">ALS</span><span class="o">.</span><span class="n">trainImplicit</span><span class="p">(</span><span class="n">ratings</span><span class="o">=</span><span class="n">trainData</span><span class="p">,</span> <span class="n">rank</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">trainData</span><span class="o">.</span><span class="n">unpersist</span><span class="p">()</span>
+
+<span class="n">userID</span> <span class="o">=</span> <span class="mi">2093760</span>
+<span class="n">recommendations50</span> <span class="o">=</span> <span class="n">model50</span><span class="o">.</span><span class="n">recommendProducts</span><span class="p">(</span><span class="n">userID</span><span class="p">,</span><span class="mi">50</span><span class="p">)</span>
+
+<span class="n">recArtist</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">rating</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">rating</span> <span class="ow">in</span> <span class="n">recommendations50</span><span class="p">)</span>
+
+<span class="n">recList50</span> <span class="o">=</span> <span class="n">artistByID</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">artistNames</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">()</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">recList50</span><span class="p">)</span>
+
+<span class="n">unpersist</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[&#39;Notorious B.I.G.&#39;, &#39;50 Cent&#39;, &#39;Sublime&#39;, &#39;Snoop Dogg&#39;, &#39;RJD2&#39;, &#39;Busta Rhymes&#39;, &#39;The Postal Service&#39;, &#39;De La Soul&#39;, &#39;Nas&#39;, &#39;Jay-Z&#39;, &#39;Zero 7&#39;, &#39;Black Eyed Peas&#39;, &#39;The Chemical Brothers&#39;, &#39;Kanye West&#39;, &#39;Wu-Tang Clan&#39;, &#39;Daft Punk&#39;, &#39;Mos Def&#39;, &#39;Cake&#39;, &#39;Dr. Dre&#39;, &#39;Ludacris&#39;, &#39;2Pac&#39;, &#39;The Shins&#39;, &#39;Jack Johnson&#39;, &#39;Aphex Twin&#39;, &#39;The Beatles&#39;, &#39;Eminem&#39;, &#39;Modest Mouse&#39;, &#39;Boards of Canada&#39;, &#39;Thievery Corporation&#39;, &#39;A Tribe Called Quest&#39;, &#39;Massive Attack&#39;, &#39;Jimi Hendrix&#39;, &#39;Led Zeppelin&#39;, &#39;Radiohead&#39;, &#39;John Mayer&#39;, &#39;Coldplay&#39;, &#39;Dave Matthews Band&#39;, &#39;Air&#39;, &#39;Gorillaz&#39;, &#39;Miles Davis&#39;, &#39;DJ Shadow&#39;, &#39;Pink Floyd&#39;, &#39;Jurassic 5&#39;, &#39;Beck&#39;, &#39;Outkast&#39;, &#39;The Roots&#39;, &#39;The Game&#39;, &#39;Talib Kweli&#39;, &#39;311&#39;, &#39;Beastie Boys&#39;]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Model-with-lamda-=-0.0001-,-alpha-=-40">Model with lamda = 0.0001 , alpha = 40<a class="anchor-link" href="#Model-with-lamda-=-0.0001-,-alpha-=-40">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[53]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">model50_1</span> <span class="o">=</span> <span class="n">ALS</span><span class="o">.</span><span class="n">trainImplicit</span><span class="p">(</span><span class="n">ratings</span><span class="o">=</span><span class="n">trainData</span><span class="p">,</span> <span class="n">rank</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">lambda_</span><span class="o">=</span> <span class="mf">0.0001</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span> <span class="mf">40.0</span><span class="p">)</span>
+<span class="n">trainData</span><span class="o">.</span><span class="n">unpersist</span><span class="p">()</span>
+
+<span class="n">userID</span> <span class="o">=</span> <span class="mi">2093760</span>
+<span class="n">recommendations50_1</span> <span class="o">=</span> <span class="n">model50_1</span><span class="o">.</span><span class="n">recommendProducts</span><span class="p">(</span><span class="n">userID</span><span class="p">,</span><span class="mi">50</span><span class="p">)</span>
+
+<span class="n">recArtist</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">rating</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">rating</span> <span class="ow">in</span> <span class="n">recommendations50_1</span><span class="p">)</span>
+
+<span class="n">recList50_1</span> <span class="o">=</span> <span class="n">artistByID</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">artistNames</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">()</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">recList50_1</span><span class="p">)</span>
+
+<span class="n">unpersist</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[&#39;Sublime&#39;, &#39;Tenacious D&#39;, &#39;[unknown]&#39;, &#39;Keane&#39;, &#39;Sum 41&#39;, &#39;Black Eyed Peas&#39;, &#39;Jet&#39;, &#39;The Offspring&#39;, &#39;Maroon 5&#39;, &#39;AC/DC&#39;, &#39;Placebo&#39;, &#39;Bob Marley&#39;, &#39;Queen&#39;, &#39;Dashboard Confessional&#39;, &#39;Rage Against the Machine&#39;, &#39;Counting Crows&#39;, &#34;Guns N&#39; Roses&#34;, &#39;Jack Johnson&#39;, &#39;Garbage&#39;, &#39;No Doubt&#39;, &#39;Goo Goo Dolls&#39;, &#39;Eminem&#39;, &#39;Aerosmith&#39;, &#39;Oasis&#39;, &#39;The White Stripes&#39;, &#39;Pearl Jam&#39;, &#39;The Killers&#39;, &#39;Red Hot Chili Peppers&#39;, &#39;Foo Fighters&#39;, &#39;Avril Lavigne&#39;, &#39;Muse&#39;, &#39;Coldplay&#39;, &#39;Dave Matthews Band&#39;, &#39;U2&#39;, &#39;Flogging Molly&#39;, &#39;Nirvana&#39;, &#39;Gorillaz&#39;, &#39;Incubus&#39;, &#39;Weezer&#39;, &#39;Outkast&#39;, &#39;Queens of the Stone Age&#39;, &#39;Linkin Park&#39;, &#39;Audioslave&#39;, &#39;Jimmy Eat World&#39;, &#39;Green Day&#39;, &#39;Good Charlotte&#39;, &#39;Gwen Stefani&#39;, &#39;Beastie Boys&#39;, &#39;blink-182&#39;, &#39;Reel Big Fish&#39;]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[57]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">temp3</span> <span class="o">=</span> <span class="p">[</span><span class="n">item</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">recList50</span> <span class="k">if</span> <span class="n">item</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">recList50_1</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">temp3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> Number of different artists between standard model and model_1:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">temp3</span><span class="p">)))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[&#39;Notorious B.I.G.&#39;, &#39;50 Cent&#39;, &#39;Snoop Dogg&#39;, &#39;RJD2&#39;, &#39;Busta Rhymes&#39;, &#39;The Postal Service&#39;, &#39;De La Soul&#39;, &#39;Nas&#39;, &#39;Jay-Z&#39;, &#39;Zero 7&#39;, &#39;The Chemical Brothers&#39;, &#39;Kanye West&#39;, &#39;Wu-Tang Clan&#39;, &#39;Daft Punk&#39;, &#39;Mos Def&#39;, &#39;Cake&#39;, &#39;Dr. Dre&#39;, &#39;Ludacris&#39;, &#39;2Pac&#39;, &#39;The Shins&#39;, &#39;Aphex Twin&#39;, &#39;The Beatles&#39;, &#39;Modest Mouse&#39;, &#39;Boards of Canada&#39;, &#39;Thievery Corporation&#39;, &#39;A Tribe Called Quest&#39;, &#39;Massive Attack&#39;, &#39;Jimi Hendrix&#39;, &#39;Led Zeppelin&#39;, &#39;Radiohead&#39;, &#39;John Mayer&#39;, &#39;Air&#39;, &#39;Miles Davis&#39;, &#39;DJ Shadow&#39;, &#39;Pink Floyd&#39;, &#39;Jurassic 5&#39;, &#39;Beck&#39;, &#39;The Roots&#39;, &#39;The Game&#39;, &#39;Talib Kweli&#39;, &#39;311&#39;]
+
+ Number of different artists between standard model and model_1:41
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Model-with-lambda-=-0.1,-alpha-=-1.0">Model with lambda = 0.1, alpha = 1.0<a class="anchor-link" href="#Model-with-lambda-=-0.1,-alpha-=-1.0">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[55]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">model50_2</span> <span class="o">=</span> <span class="n">ALS</span><span class="o">.</span><span class="n">trainImplicit</span><span class="p">(</span><span class="n">ratings</span><span class="o">=</span><span class="n">trainData</span><span class="p">,</span> <span class="n">rank</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">lambda_</span><span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span> <span class="mf">1.0</span><span class="p">)</span>
+<span class="n">trainData</span><span class="o">.</span><span class="n">unpersist</span><span class="p">()</span>
+
+<span class="n">userID</span> <span class="o">=</span> <span class="mi">2093760</span>
+<span class="n">recommendations50_2</span> <span class="o">=</span> <span class="n">model50_2</span><span class="o">.</span><span class="n">recommendProducts</span><span class="p">(</span><span class="n">userID</span><span class="p">,</span><span class="mi">50</span><span class="p">)</span>
+
+<span class="n">recArtist</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">rating</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">rating</span> <span class="ow">in</span> <span class="n">recommendations50_2</span><span class="p">)</span>
+
+<span class="n">recList50_2</span> <span class="o">=</span> <span class="n">artistByID</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">artistNames</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">()</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">recList50_2</span><span class="p">)</span>
+
+<span class="n">unpersist</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[&#39;Notorious B.I.G.&#39;, &#39;DJ Danger Mouse&#39;, &#39;50 Cent&#39;, &#39;Sublime&#39;, &#39;Snoop Dogg&#39;, &#39;RJD2&#39;, &#39;The Postal Service&#39;, &#39;De La Soul&#39;, &#39;Nas&#39;, &#39;Jay-Z&#39;, &#39;Zero 7&#39;, &#39;Bob Dylan&#39;, &#39;Kanye West&#39;, &#39;Wu-Tang Clan&#39;, &#39;The Streets&#39;, &#39;Daft Punk&#39;, &#39;Mos Def&#39;, &#39;Bob Marley&#39;, &#39;Dr. Dre&#39;, &#39;Ludacris&#39;, &#39;2Pac&#39;, &#39;Jack Johnson&#39;, &#39;The Beatles&#39;, &#39;Eminem&#39;, &#39;Modest Mouse&#39;, &#39;Ben Harper&#39;, &#39;The Strokes&#39;, &#39;Oasis&#39;, &#39;The White Stripes&#39;, &#39;Thievery Corporation&#39;, &#39;Franz Ferdinand&#39;, &#39;Blackalicious&#39;, &#39;A Tribe Called Quest&#39;, &#39;Jimi Hendrix&#39;, &#39;Radiohead&#39;, &#39;Coldplay&#39;, &#39;Bob Marley &amp; the Wailers&#39;, &#39;Gorillaz&#39;, &#39;Miles Davis&#39;, &#39;Weezer&#39;, &#39;DJ Shadow&#39;, &#39;Jurassic 5&#39;, &#39;The Rolling Stones&#39;, &#39;Beck&#39;, &#39;Outkast&#39;, &#39;The Roots&#39;, &#39;The Game&#39;, &#39;Talib Kweli&#39;, &#39;Atmosphere&#39;, &#39;Beastie Boys&#39;]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[58]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">temp4</span> <span class="o">=</span> <span class="p">[</span><span class="n">item</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">recList50</span> <span class="k">if</span> <span class="n">item</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">recList50_2</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">temp4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> Number of different artists between standard model and model_2:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">temp4</span><span class="p">)))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[&#39;Busta Rhymes&#39;, &#39;Black Eyed Peas&#39;, &#39;The Chemical Brothers&#39;, &#39;Cake&#39;, &#39;The Shins&#39;, &#39;Aphex Twin&#39;, &#39;Boards of Canada&#39;, &#39;Massive Attack&#39;, &#39;Led Zeppelin&#39;, &#39;John Mayer&#39;, &#39;Dave Matthews Band&#39;, &#39;Air&#39;, &#39;Pink Floyd&#39;, &#39;311&#39;]
+
+ Number of different artists between standard model and model_2:14
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Conclusion:-As-the-result-has-shown-above,-I-dont-need-to-expand-the-result-list-to-top-70-artists-anymore.-It-is-clearly-proving-my-hypothesis-is-true">Conclusion: As the result has shown above, I dont need to expand the result list to top 70 artists anymore. It is clearly proving my hypothesis is true<a class="anchor-link" href="#Conclusion:-As-the-result-has-shown-above,-I-dont-need-to-expand-the-result-list-to-top-70-artists-anymore.-It-is-clearly-proving-my-hypothesis-is-true">&#182;</a></h3><h3 id="How-we-configure-the-lambda-and-alpha-makes-a-huge-impact-on-the-retrieved-result:-In-my-example,-the-top-artists-that-highly-recommended-to-user=&quot;2093760&quot;-is-['50Cent',-'Snoopdog',-Notorious-B.I.G]-(they-appear-in-both-standard-model-and-modified-models).-Others-artists-may-vary-from-different-models.">How we configure the lambda and alpha makes a huge impact on the retrieved result: In my example, the top artists that highly recommended to user="2093760" is ['50Cent', 'Snoopdog', Notorious B.I.G] (they appear in both standard model and modified models). Others artists may vary from different models.<a class="anchor-link" href="#How-we-configure-the-lambda-and-alpha-makes-a-huge-impact-on-the-retrieved-result:-In-my-example,-the-top-artists-that-highly-recommended-to-user=&quot;2093760&quot;-is-['50Cent',-'Snoopdog',-Notorious-B.I.G]-(they-appear-in-both-standard-model-and-modified-models).-Others-artists-may-vary-from-different-models.">&#182;</a></h3><h3 id="To-answer-my-question-in-10.2:-we-may-not-need-to-include-lambda-and-alpha-to-the-model-if-we-only-retreive-the-top-result-less-than-10-artists.">To answer my question in 10.2: we may not need to include lambda and alpha to the model if we only retreive the top result less than 10 artists.<a class="anchor-link" href="#To-answer-my-question-in-10.2:-we-may-not-need-to-include-lambda-and-alpha-to-the-model-if-we-only-retreive-the-top-result-less-than-10-artists.">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Proposed-method:">Proposed method:<a class="anchor-link" href="#Proposed-method:">&#182;</a></h2><h3 id="In-my-opinion:-We-should-cut-out-outliers-(top-5-artists).-With-this-method,-recommendation-will-be-more-diverse-and-accurate.">In my opinion: We should cut out outliers (top 5 artists). With this method, recommendation will be more diverse and accurate.<a class="anchor-link" href="#In-my-opinion:-We-should-cut-out-outliers-(top-5-artists).-With-this-method,-recommendation-will-be-more-diverse-and-accurate.">&#182;</a></h3>
 </div>
 </div>
 </div>
